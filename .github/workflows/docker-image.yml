@@ -16,8 +16,8 @@ jobs:
     - name: Get Versions
       id: version
       run: |
-        echo "name=major::$(awk -F, '{print $2}' .tags) >> $GITHUB_OUTPUT"
-        echo "name=full::$(awk -F, '{print $1}' .tags) >> $GITHUB_OUTPUT"
+        echo "name=major::$(awk -F, '{print $2}' .tags)" >> $GITHUB_OUTPUT
+        echo "name=full::$(awk -F, '{print $1}' .tags)" >> $GITHUB_OUTPUT
 
     - name: SetUp QEMU
       uses: docker/setup-qemu-action@v3
